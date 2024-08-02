@@ -48,12 +48,12 @@ class ItemController extends Controller
     public function show(Item $item)
     {
         // return response()->json($item);
-        if ($items) {
+        if ($item) {
             return response()->json([
                 'success' => true,
                 'message' =>$item,
             ], 200);
-        } else {
+        } else if($item == null ) {
             return response()->json([
                 'success' => false,
                 'message' => 'data tidak ditemukan',
